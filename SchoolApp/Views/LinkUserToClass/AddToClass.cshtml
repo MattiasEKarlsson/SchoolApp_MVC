@@ -1,0 +1,32 @@
+﻿@model SchoolApp.Data.ApplicationUser
+
+@{ ViewData["Title"] = "Create"; }
+
+
+
+<h4>Add User to class</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="LinkUserToClass" asp-action="AddToClass">
+            <input type="hidden" asp-for="Id" />
+            <div>
+                <label asp-for="FirstName">@Model.FirstName</label>  <label asp-for="LastName">@Model.LastName</label>
+            </div>
+            <div>
+
+            </div>
+            <div class="dropdown mb-3">
+                <select asp-for="ClassId" asp-items="@ViewBag.TypeDropdown" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Users" asp-action="AllStudentsList">Back to List</a>
+</div>
+

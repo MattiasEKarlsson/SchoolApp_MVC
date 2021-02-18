@@ -1,0 +1,21 @@
+﻿
+@if (SignInManager.IsSignedIn(User))
+{
+    if (User.IsInRole("Admin"))
+    {
+        <partial name="_NavBarAdminPartial.cshtml" />
+    }
+    else
+    {
+       
+        <partial name="_NavbarStudentAndTeacherPartial.cshtml" />
+    }
+}
+
+else
+{
+    <partial name="_NavBarNotLoggedInPartial.cshtml" />
+
+}
+
+

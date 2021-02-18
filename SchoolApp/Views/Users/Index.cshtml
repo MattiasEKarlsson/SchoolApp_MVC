@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ApplicationUser>
+
+<div class="container m-2 flex align-content-center">
+    <h1>All Users</h1>
+    <hr />
+</div>
+<div class="row text-center">
+
+    @foreach (var user in ViewBag.Users)
+    {
+        @if(user.Role== "Admin")
+        {
+          <div class="col-xl-3 col-sm-6 mb-5">
+            <div class="rounded shadow-sm py-5 px-4 cardadmin border zoom">
+                <img src="~/pics/Admin.jpg" alt="" width="130" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0">@user.GetDisplay()</h5><span class="small text-uppercase text-muted">@user.Role</span>
+                <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+          </div>
+        }
+
+        @if(user.Role== "Teacher")
+        {
+          <div class="col-xl-3 col-sm-6 mb-5">
+            <div class="rounded shadow-sm py-5 px-4 cardo border zoom">
+                <img src="https://d19m59y37dris4.cloudfront.net/university/1-1-1/img/teacher-4.jpg" alt="" width="130" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0">@user.GetDisplay()</h5><span class="small text-uppercase text-muted">@user.Role</span>
+                <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+          </div>
+        }
+
+        @if(user.Role== "Student")
+        {
+          <div class="col-xl-3 col-sm-6 mb-5">
+            <div class="rounded shadow-sm py-5 px-4 cardstudent border zoom">
+                <img src="~/pics/Student.jpg" alt="" width="130" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0">@user.GetDisplay()</h5><span class="small text-uppercase text-muted">@user.Role</span>
+                <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+          </div>
+        }
+    }
+</div>

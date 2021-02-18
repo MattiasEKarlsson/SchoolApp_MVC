@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ApplicationUser>
+
+
+
+<h1>All User List</h1>
+<hr />
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                FirstName
+            </th>
+            <th>
+                LastName
+            </th>
+            <th>
+                Role
+            </th>
+            <th>
+                Add to a Class
+            </th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        @foreach (var user in ViewBag.Users)
+        {
+            if (user.Role != "Admin")
+            {
+                
+                <tr>
+                    <td width="25%">
+                        @user.FirstName
+                    </td>
+                    <td width="25%">
+                        @user.LastName
+                    </td>
+                    <td width="25%">
+                        @user.Role
+                    </td>
+                    <td width="25%">
+                        <a class="btn btn-primary w-100" asp-controller="LinkUserToClass" asp-action="AddToClass" asp-route-id="@user.Id">Add to a class</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+
+</table>
